@@ -10,6 +10,7 @@
     @Scripts.Render("~/bundles/modernizr")
     <link href="~/Content/bootstrap-icons-1.10.3/bootstrap-icons.css" rel="stylesheet" />
     <link href="~/Content/Site.css" rel="stylesheet" />
+
 </head>
 <body onload="getGioHangPartial();">
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-success">
@@ -23,8 +24,20 @@
                 <ul class="navbar-nav flex-grow-1">
                     <li>@Html.ActionLink("Trang chủ", "Home", "Store", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("Index", "Index", "Admin", new { area = "" }, new { @class = "nav-link" })</li>
-
                     <li>@Html.ActionLink("Danh mục sản phẩm", "DanhMuc", "Store", new { area = "" }, new { @class = "nav-link" })</li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+
                 </ul>
                 <ul class="navbar-nav">
                     <li>@Html.ActionLink(" ", "GioHang", "GioHang", new { area = "" }, new { @class = "bi bi-basket nav-link" })</li>
@@ -49,7 +62,10 @@
                     }
                 </div>
             </div>
+        </div>
+
     </nav>
+    <img src="~/Content/images/banner.jpg" width="100%" />
     <script type="text/javascript">
         function getGioHangPartial() {
             $.ajax({

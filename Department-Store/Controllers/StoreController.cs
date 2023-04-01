@@ -21,16 +21,6 @@ namespace Department_Store.Controllers
             return View(item.ToPagedList(pageNum, pageSize));
             //return View(item);
         }
-        public ActionResult DanhMuc()
-        {
-            var listdm = from dm in data.DanhMucs select dm;
-            return View(listdm);
-        }
 
-        public ActionResult DanhMucSP(int id)
-        {
-            var list = data.SanPhams.Where(m => m.MaDM == id).ToList();
-            return View(list);
-        }
     }
 }

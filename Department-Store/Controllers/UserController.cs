@@ -78,17 +78,16 @@ namespace Department_Store.Controllers
             {
                 if (tendangnhap == "Admin@gmail.com")
                 {
-                    Session["KhachHang"] = kh;
+                    Session["TaiKhoan"] = kh;
                     return RedirectToAction("Index", "Admin");
                 }
                 else
                 {
-                    Session["KhachHang"] = kh;
+                    ViewBag.ThongBao = "Chúc mừng đang nhập thành công";
+                    Session["TaiKhoan"] = kh;
                     return RedirectToAction("Home", "Store");
                 }
-                //ViewBag.ThongBao = "Chúc mừng đang nhập thành công";
-                //Session["TaiKhoan"] = kh;
-                //return RedirectToAction("Home", "Store");
+
             }
             else
             {
@@ -100,7 +99,7 @@ namespace Department_Store.Controllers
         {
             Session["TaiKhoan"] = null;
             Session.Abandon();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Admin");
         }
     }
 }

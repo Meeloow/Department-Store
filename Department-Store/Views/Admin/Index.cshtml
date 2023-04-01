@@ -1,4 +1,4 @@
-﻿@*@model IEnumerable<Department_Store.Models.SanPham>*@
+﻿
 @model PagedList.IPagedList<Department_Store.Models.SanPham>
 @using PagedList.Mvc;
 @{
@@ -29,7 +29,6 @@
             <td><img src="@item.HinhSP" alt="hinh thumbnail" width="75%" height="75%" /></td>
 
             <td>@Html.DisplayFor(modelItem => item.NgayNhap)</td>
-            @*<td>@Html.DisplayFor(modelItem => item.DanhMuc.TenDM)</td>*@
             <td>
                 @Html.ActionLink("Edit", "SuaSP", new { id = item.MaSP }) 
                 @Html.ActionLink("Delete", "XoaSP", new { id = item.MaSP })
