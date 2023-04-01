@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="13b88f3a64c84adb9c7318c7de1556c0" Name="Diagram1">
+        <EntityTypeShape EntityType="DepartmentStoreModel.ChiTietDonHang" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DepartmentStoreModel.DanhMuc" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DepartmentStoreModel.DonHang" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DepartmentStoreModel.HoaDon" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DepartmentStoreModel.KhachHang" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DepartmentStoreModel.SanPham" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="DepartmentStoreModel.FK__ChiTietDo__madon__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="DepartmentStoreModel.FK__ChiTietDon__MaSP__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="DepartmentStoreModel.FK__DonHang__makh__3C69FB99" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

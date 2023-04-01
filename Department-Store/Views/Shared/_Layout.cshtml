@@ -1,0 +1,74 @@
+﻿@using Department_Store.Models
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/bootstrap-icons-1.10.3/bootstrap-icons.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body onload="getGioHangPartial();">
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-success">
+        <div class="container">
+            @Html.ActionLink("Thực phẩm", "Home", "Store", new { area = "" }, new { @class = "navbar-brand" })
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav flex-grow-1">
+                    <li>@Html.ActionLink("Trang chủ", "Home", "Store", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Index", "Index", "Admin", new { area = "" }, new { @class = "nav-link" })</li>
+
+                    <li>@Html.ActionLink("Danh mục sản phẩm", "DanhMuc", "Store", new { area = "" }, new { @class = "nav-link" })</li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li>@Html.ActionLink(" ", "GioHang", "GioHang", new { area = "" }, new { @class = "bi bi-basket nav-link" })</li>
+                    <li id="GioHangPartial"> </li>
+                </ul>
+                <div class="navbar-right">
+                    @if ((KhachHang)Session["TaiKhoan"] == null)
+                    {
+                        <ul class="nav navbar-nav">
+                            <li>@Html.ActionLink("Dang Nhap", "DangNhap", "User", new { area = "" }, new { @class = "nav-link" })</li>
+                            <li>@Html.ActionLink("Dang Ky", "DangKy", "User", new { area = "" }, new { @class = "nav-link" })</li>
+                        </ul>
+                    }
+                    else
+                    {
+                        KhachHang kh = (KhachHang)Session["TaiKhoan"];
+                        <ul class="nav navbar-nav">
+                            <li>@Html.ActionLink("Hello " + kh.tendangnhap + "!", "Home", "Store    ", new { area = "" }, new { @class = "nav-link" })</li>
+                            <li>@Html.ActionLink("LogOff", "LogOff", "User", new { area = "" }, new { @class = "nav-link" })</li>
+                        </ul>
+
+                    }
+                </div>
+            </div>
+    </nav>
+    <script type="text/javascript">
+        function getGioHangPartial() {
+            $.ajax({
+                type: 'GET',
+                url: "@Url.Action("GioHangPartial", "GioHang")",
+                success: function (result) {
+                    $("#GioHangPartial").html(result);
+                }
+            });
+        }
+    </script>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+    @RenderSection("upload", required: false)
+</body>
+</html>
