@@ -49,7 +49,7 @@
                     <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
                         <div class="card">
                             <div class="d-flex justify-content-between p-3">
-                                <p ><strong>@item.TenSP</strong></p>
+                                <p><strong>@item.TenSP</strong></p>
                             </div>
                             <img src="@item.HinhSP"
                                  class="card-img-top" alt="Laptop" />
@@ -60,6 +60,10 @@
                                 <strong>Số lượng tồn: </strong>@item.Slgton
                                 <p><strong>Ngày nhập: </strong>Ngày nhập: @item.NgayNhap</p>
                             </div>
+                            <div class="d-flex justify-content-center align-items-center pb-2 mb-1">
+                                <a class="btn btn-outline-success" onclick="addToCart(@item.MaSP)">Đặt Mua</a>
+                            </div>
+                            
                         </div>
                     </div>
                     <br />

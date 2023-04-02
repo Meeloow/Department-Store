@@ -17,7 +17,7 @@ namespace Department_Store.Controllers
             ViewBag.KeyWord = Search;
             if (page == null) page = 1;
             var item = (from hh in data.SanPhams select hh).Where(m => m.Slgton > 0).OrderBy(m => m.MaSP); ;
-            int pageSize = 9;
+            int pageSize = 6;
             int pageNum = page ?? 1;
             return View(item.ToPagedList(pageNum, pageSize));
         }
