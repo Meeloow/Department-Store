@@ -15,7 +15,7 @@ namespace Department_Store.Controllers
         public ActionResult DanhMuc()
         {
             var listdm = from dm in data.DanhMucs select dm;
-            return View(listdm);
+            return PartialView(listdm);
         }
 
         public ActionResult DanhMucSP(int id)

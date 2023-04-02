@@ -2486,6 +2486,7 @@
     <Content Include="Content\images\dauancookingoil.jpg" />
     <Content Include="Content\images\daudaunanh.jpg" />
     <Content Include="Content\images\giaman.jpg" />
+    <Content Include="Content\images\login.jpg" />
     <Content Include="Content\images\merino.jpg" />
     <Content Include="Content\images\mitom3mien.jpg" />
     <Content Include="Content\images\mitomgaudo.jpg" />
@@ -2838,7 +2839,6 @@
     <Content Include="Views\DanhMuc\DanhMuc.cshtml" />
     <Content Include="Views\DanhMuc\DanhMucSP.cshtml" />
     <Content Include="Views\User\DangKy.cshtml" />
-    <Content Include="Views\User\DangNhap.cshtml" />
     <Content Include="Views\Admin\ThemSP.cshtml" />
     <Content Include="Views\Admin\XoaSP.cshtml" />
     <Content Include="Views\GioHang\DatHang.cshtml" />
@@ -2856,12 +2856,11 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Admin\ThemDM.cshtml" />
-    <Content Include="Views\Admin\DanhMuc.cshtml" />
     <Content Include="Views\Store\Home.cshtml" />
+    <Content Include="Views\User\DangNhap.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Account\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

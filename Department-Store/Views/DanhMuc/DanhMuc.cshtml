@@ -1,7 +1,10 @@
 ﻿
 @model IEnumerable<Department_Store.Models.DanhMuc>
 
-<div>
+
+
+
+<div >
     @foreach (var item in Model)
     {
         <button class="btn btn-outline-primary">@Html.ActionLink(item.TenDM, "DanhMucSP", new { id = item.MaDM })</button>

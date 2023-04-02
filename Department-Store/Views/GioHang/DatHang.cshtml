@@ -5,47 +5,116 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Đặt Hàng</h2>
+<section class="h-100 gradient-custom">
+    <div class="container py-5">
+        <div class="row d-flex justify-content-center my-4">
+            <div class="col-md-8">
+                <div class="card mb-4">
+                    <div class="card-header py-3">
+                        <h5 class="mb-0">Sản Phẩm</h5>
+                    </div>
+                    <div class="card-body">
+                        @foreach (var item in Model)
+                        {
+                            <!-- Single item -->
+                            <div class="row">
+                                <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                                    <!-- Image -->
+                                    <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
+                                        <img src="@item.hinh"
+                                             class="w-100" alt="Blue Jeans Jacket" />
+                                        <a href="#!">
+                                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
+                                        </a>
+                                    </div>
+                                    <!-- Image -->
+                                </div>
 
-<table class="table">
-    <tr>
-        @*<th>@Html.DisplayNameFor(model => model.masp)</th>*@
-        <th><p>Mã Sản Phẩm</p></th>
-        <th>@Html.DisplayNameFor(model => model.tensp)</th>
-        <th>@Html.DisplayNameFor(model => model.hinh)</th>
-        <th>@Html.DisplayNameFor(model => model.giaban)</th>
-        <th>@Html.DisplayNameFor(model => model.isoluong)</th>
-        <th>@Html.DisplayNameFor(model => model.dThanhtien)</th>
-        <th></th>
-    </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@Html.DisplayFor(modelItem => item.masp)</td>
-            <td><img src="@item.hinh" width="200" /></td>
-            <td>@Html.DisplayFor(modelItem => item.tensp)</td>
-            @using (Html.BeginForm("CapnhatGiohang", "GioHang", new { @id = item.masp }))
-            {
-                <td>@String.Format("{0:0,0}", item.giaban) VNĐ</td>
-                <td>@Html.DisplayFor(modelItem => item.isoluong)</td>
-                <td>@Html.DisplayFor(modelItem => item.dThanhtien)</td>
-            }
-        </tr>
-    }
-    <tr style="font-weight:bold; text-align:right; color:red">
-        <td colspan="3">Số lượng sản phẩm: @ViewBag.Tongsoluong</td>
-        <td colspan="4">Số loại sản phẩm: @ViewBag.Tongsoluongsanpham</td>
-        <td colspan="5">
-            Tổng tiền:
-            @String.Format("{0:0,0}", @ViewBag.Tongtien) VND
-        </td>
-    </tr>
-    <tr style="font-weight:bold; text-align:right">
-        <td colspan="6">
-            @Html.ActionLink("Trở về giỏ hàng", "GioHang", "GioHang")
-    </tr>
-</table>
-@using Department_Store.Models
+                                <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                                    <!-- Data -->
+                                    <p><strong>@Html.DisplayFor(modelItem => item.tensp)</strong></p>
+                                </div>
+
+
+                                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                                    <!-- Quantity -->
+                                    <div class="d-flex mb-4" style="max-width: 300px">
+                                        <span><strong>Số lượng: </strong>@item.isoluong</span>
+                                    </div>
+                                    <!-- Quantity -->
+                                    <!-- Price -->
+                                    <p class="text-start text-md-center">
+                                    <p>
+
+                                        @Html.DisplayFor(modelItem => item.dThanhtien) VND
+                                    </p>
+                                    </p>
+                                    <!-- Price -->
+                                </div>
+
+                            </div>
+
+                            <!-- Single item -->
+                        }
+
+                        <hr class="my-4" />
+                        <span> <strong>Tổng số sản phẩm:</strong> @ViewBag.Tongsoluongsanpham</span>
+                        <span> <strong>Tổng số sản phẩm:</strong> @ViewBag.Tongsoluong</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-header py-3">
+                        <h5 class="mb-0">Thông tin khách hàng</h5>
+                    </div>
+                    <div class="card-body">
+                        <table align="center">
+                            @using Department_Store.Models
+                            @{
+                                KhachHang kh = (KhachHang)Session["Taikhoan"];
+                            }
+                            @using (Html.BeginForm())
+                            {
+                                @Html.ValidationSummary(true)
+                                <tr style="height: 40px">
+                                    <td>Họ tên khách hàng: </td>
+                                    <td style="font-weight:bold"> @kh.hoten</td>
+                                </tr>
+                                <tr style="height: 40px">
+                                    <td>Email: </td>
+                                    <td style="font-weight:bold">@kh.email</td>
+                                </tr>
+                                <tr style="height: 40px">
+                                    <td>Địa chỉ: </td>
+                                    <td style="font-weight:bold">@kh.diachi</td>
+                                </tr>
+                                <tr style="height: 40px">
+                                    <td>Điện thoại: </td>
+                                    <td style="font-weight:bold">@kh.dienthoai</td>
+                                </tr>
+                                <tr style="height: 40px">
+                                    <td>Ngày đặt: </td>
+                                    <td style="font-weight:bold">@DateTime.Now.ToShortDateString()</td>
+                                </tr>
+                                <tr style="height: 40px">
+                                    <td>Ngày giao: </td>
+                                    <td style="font-weight:bold">@DateTime.Now.ToShortDateString()</td>
+                                </tr>
+                                <tr style="height: 40px">
+                                    <td></td>
+                                    <td style="font-weight:bold">
+                                        <input type="submit" value="Xác nhận" class="btn btn-outline-success" />
+                                    </td>
+                                </tr>
+                            }
+                        </table>                     
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@*@using Department_Store.Models
 <h2 style="text-align:center">Thông tin đặt hàng</h2>
 @{
     KhachHang kh = (KhachHang)Session["Taikhoan"];
@@ -86,4 +155,4 @@
             </td>
         </tr>
     }
-</table>
+</table>*@

@@ -30,6 +30,7 @@ namespace Department_Store.Controllers
             var ngaysinh = string.Format("{0:MM/dd/yyyy}", collection["ngaysinh"]);
             if (tendangnhap == "Admin@gmail.com")
             {
+
                 ViewBag.alert = "Tên đăng nhập đã tồn tại!";
                 return RedirectToAction("DangKy", "User");
             }
@@ -99,7 +100,7 @@ namespace Department_Store.Controllers
         {
             Session["TaiKhoan"] = null;
             Session.Abandon();
-            return RedirectToAction("Index", "Admin");
+            return RedirectToAction("Home", "Store");
         }
     }
 }

@@ -12,14 +12,14 @@ namespace Department_Store.Controllers
     {
         DbStore data = new DbStore();
         // GET: Store
-        public ActionResult Home(int? page)
+        public ActionResult Home(int? page, string Search)
         {
+            ViewBag.KeyWord = Search;
             if (page == null) page = 1;
             var item = (from hh in data.SanPhams select hh).Where(m => m.Slgton > 0).OrderBy(m => m.MaSP); ;
-            int pageSize = 8;
+            int pageSize = 9;
             int pageNum = page ?? 1;
             return View(item.ToPagedList(pageNum, pageSize));
-            //return View(item);
         }
 
     }

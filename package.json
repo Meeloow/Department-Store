@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "bootstrap-icons": "^1.10.3"
+    "bootstrap-icons": "^1.10.3",
+    "mdb-ui-kit": "^6.2.0"
   }
 }

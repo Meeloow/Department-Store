@@ -143,10 +143,12 @@ namespace Department_Store.Controllers
             SanPham s = new SanPham();
             HoaDon hd = new HoaDon();
             List<GioHang> gh = Laygiohang();
-            var ngaygiao = String.Format("{0: d/M/yyyy}", collection["NgayLapDon"]);
+            var ngaygiao = String.Format("{0: d/M/yyyy}", collection["ngaygiao"]);
             dh.makh = kh.makh;
             dh.ngaydat = DateTime.Now;
-            dh.ngaygiao = DateTime.Parse(ngaygiao);
+            dh.ngaygiao = DateTime.Now;
+
+            //dh.ngaygiao = DateTime.Parse(ngaygiao);
             data.DonHangs.Add(dh);
             data.SaveChanges();
             hd.NgayLapHD = DateTime.Now;

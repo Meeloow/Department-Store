@@ -3,32 +3,32 @@
     ViewBag.Title = "DanhMucSP";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>DanhMucSP</h2>
-
+<div class="danhmuc">
+    @Html.Action("Danhmuc", "Danhmuc")
+</div>
+<br />
 <div class="row">
     @foreach (var item in Model)
-    {
-        {
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                <div class="panel panel-default">
-                    <div class="panel panel-heading">
-                        @item.TenSP
-                    </div>
-                    <div class="panel-body">
-                        <p><strong>Giá: </strong>@item.GiaSP</p>
-                        <p><strong>Ngày cập nhật: </strong>@item.NgayNhap</p>
-                        <p><strong>Số lượng tồn: </strong>@item.Slgton</p>
-                        <p><img src="@item.HinhSP" alt="hinh thumnail" height="300"></p>
-                    </div>
-                    <div class="panel-footer clearfix">
-                        <div class="pull-right">
-                            <a class="btn btn-outline-success" href="@Url.Action("ThemGioHang", "GioHang",new { @id = item.MaSP, @strURL = Request.Url.ToString() })">Đặt mua</a>
+    {<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+            <div class="small-container">
+
+                <div class="col-3">
+                    <div class="card" style="width: 20rem;">
+                        <img class="card-img-top" src="@item.HinhSP" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">@item.TenSP</h5>
+                            <strong>Giá: </strong>@item.GiaSP
+                            <br />
+                            <strong>Số lượng tồn: </strong>@item.Slgton
+                            <p>Ngày nhập: @item.NgayNhap</p>
+
+
                         </div>
+                        <a class="btn btn-outline-success" onclick="addToCart(@item.MaSP)">Đặt Mua</a>
                     </div>
                 </div>
+                <br />
             </div>
-        }
-
+        </div>
     }
 </div>
