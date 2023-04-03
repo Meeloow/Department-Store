@@ -17,7 +17,11 @@ namespace Department_Store.Controllers
             var listdm = from dm in data.DanhMucs select dm;
             return PartialView(listdm);
         }
-
+        public ActionResult DanhMucAdmin()
+        {
+            var listdm = from dm in data.DanhMucs select dm;
+            return PartialView(listdm);
+        }
         public ActionResult DanhMucSP(int id)
         {
             var list = data.SanPhams.Where(m => m.MaDM == id).ToList();
