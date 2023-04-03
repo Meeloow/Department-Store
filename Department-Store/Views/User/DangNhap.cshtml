@@ -5,44 +5,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<style>
-</style>
-
-@*@using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-horizontal d-print-none">
-
-            <p class="h4 mb-4">Đăng Nhập</p>
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            <div class="form-group">
-                @Html.LabelFor(model => model.tendangnhap, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.tendangnhap, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.tendangnhap, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.matkhau, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.PasswordFor(model => model.matkhau, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.matkhau, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                <div class="col-md-offset-2 col-md-10">
-                    <br />
-                    <input type="submit" value="Đang nhập" class="btn btn-outline-success" />
-                </div>
-            </div>
-        </div>
-    }*@
-
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -67,33 +29,31 @@
                                             <span class="h1 fw-bold mb-0">Logo</span>
                                         </div>
 
-                                        <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Sign into your account</h5>
+                                        <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Đăng nhập vào tài khoản của bạn</h5>
 
-                                        <div class="form-outline mb-4">
+                                        <div class=" mb-4">
                                             @*<input type="email" id="form2Example17" class="form-control form-control-lg" />*@
                                             @Html.EditorFor(model => model.tendangnhap, new { htmlAttributes = new { @class = "form-control" } })
-                                           @* @Html.ValidationMessageFor(model => model.tendangnhap, "", new { @class = "text-danger" })*@
+                                            @Html.ValidationMessageFor(model => model.tendangnhap, "", new { @class = "text-danger" })
                                             <label class="form-label" for="form2Example17">Email address</label>
                                         </div>
 
-                                        <div class="form-outline mb-4">
+                                        <div class=" mb-4">
                                             @*<input type="password" id="form2Example27" class="form-control form-control-lg" />*@
                                             @Html.PasswordFor(model => model.matkhau, new { htmlAttributes = new { @class = "form-control" } })
-                                           @* @Html.ValidationMessageFor(model => model.matkhau, "", new { @class = "text-danger" })*@
+                                            @Html.ValidationMessageFor(model => model.matkhau, "", new { @class = "text-danger" })
                                             <br />
                                             <label class="form-label" for="form2Example27">Password</label>
                                         </div>
 
                                         <div class="pt-1 mb-4">
-                                            <input type="submit" value="Login" class="btn btn-dark btn-lg btn-block" />
+                                            <input type="submit" value="Đăng nhập" class="btn btn-dark btn-lg btn-block" />
                                         </div>
 
-                                        <a class="small text-muted" href="#!">Forgot password?</a>
+                                        <a class="small text-muted" href="#!">Quên mật khẩu?</a>
                                         <p class="mb-5 pb-lg-2" style="color: #393f81;">
-                                            Don't have an account?  @Html.ActionLink("Register", "DangKy", "User", new { area = "" }, new { @class = "inline" })
+                                            Bạn chưa có tài khoản?  @Html.ActionLink("Đăng ký", "DangKy", "User", new { area = "" }, new { @class = "inline" })
                                         </p>
-                                        <a href="#!" class="small text-muted">Terms of use.</a>
-                                        <a href="#!" class="small text-muted">Privacy policy</a>
                                     </form>
 
                                 </div>

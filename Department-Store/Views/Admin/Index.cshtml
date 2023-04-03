@@ -30,8 +30,8 @@
 
             <td>@Html.DisplayFor(modelItem => item.NgayNhap)</td>
             <td>
-                @Html.ActionLink("Edit", "SuaSP", new { id = item.MaSP }) 
-                @Html.ActionLink("Delete", "XoaSP", new { id = item.MaSP })
+                @Html.ActionLink(" ", "SuaSP", new { id = item.MaSP }, new {@class= "bi bi-pen" }) 
+                @Html.ActionLink(" ", "XoaSP", new { id = item.MaSP }, new { @class = "bi bi-trash" })
             </td>
         </tr>
     }
