@@ -2526,6 +2526,7 @@
     <Content Include="Models\DbStore.edmx.diagram">
       <DependentUpon>DbStore.edmx</DependentUpon>
     </Content>
+    <Content Include="Scripts\App\JavaScript.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -2855,10 +2856,11 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Admin\ThemDM.cshtml" />
+    <Content Include="Views\DanhMuc\ThemDM.cshtml" />
     <Content Include="Views\Store\Home.cshtml" />
     <Content Include="Views\User\DangNhap.cshtml" />
     <Content Include="Views\DanhMuc\DanhMucAdmin.cshtml" />
+    <Content Include="Views\Store\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

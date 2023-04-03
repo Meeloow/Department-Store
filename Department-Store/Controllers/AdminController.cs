@@ -19,30 +19,8 @@ namespace Department_Store.Controllers
             int pageSize = 10;
             int pageNum = page ?? 1;
             return View(item.ToPagedList(pageNum, pageSize));
-            //return View(item);
         }
-        public ActionResult ThemDM()
-        {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult ThemDM(FormCollection collection, DanhMuc dm)
-        {
 
-            var S_TenDM = collection["TenDM"];
-            if (string.IsNullOrEmpty(S_TenDM))
-            {
-                ViewData["Error"] = "Don't empty!";
-            }
-            else
-            {
-                dm.TenDM = S_TenDM.ToString();
-                data.DanhMucs.Add(dm);
-                data.SaveChanges();
-                return RedirectToAction("DanhMuc");
-            }
-            return this.ThemDM();
-        }
         public ActionResult ThemSP()
         {
             return View();
