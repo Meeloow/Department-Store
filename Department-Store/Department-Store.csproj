@@ -2858,6 +2858,7 @@
     <Content Include="Views\Admin\ThemDM.cshtml" />
     <Content Include="Views\Store\Home.cshtml" />
     <Content Include="Views\User\DangNhap.cshtml" />
+    <Content Include="Views\Store\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

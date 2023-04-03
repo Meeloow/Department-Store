@@ -83,7 +83,7 @@
                                     <p><strong>@Html.DisplayFor(modelItem => item.tensp)</strong></p>
                                         @using (Html.BeginForm("XoaGioHang", "GioHang", new { @id = item.masp }))
                                         {
-                                            <div><input type="submit" value="Xoá" class="btn btn-danger" /></div>
+                                            <div><button type="submit" value="" class=" btn bi bi-trash" /></div>
                                         }                                 
                                     <!-- Data -->
                                 </div>
@@ -96,7 +96,7 @@
                                             {
                                                 <div><input type="number" min="1" max="" name="txtSoLg" value="@item.isoluong" /></div>
                                                 <br />
-                                                <div><input type="submit" value="Cập nhật" class="btn btn-success" /></div>
+                                                <div><button type="submit" value="" class="btn bi bi-cloud-arrow-up-fill" /></div>
                                             }
                                     </div>
                                     <!-- Quantity -->
