@@ -9,36 +9,40 @@
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     @Html.HiddenFor(model => model.MaSP)
 
-    <div class="form-group">
-        <h6>Tên Sản Phẩm</h6>
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.TenSP, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.TenSP, "", new { @class = "text-danger" })
-        </div>
+<div class="form-group">
+    <br />
+    <h6>Tên Sản Phẩm</h6>
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.TenSP, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.TenSP, "", new { @class = "text-danger" })
     </div>
+</div>
 
-    <div class="form-group">
-        <h6>Giá bán sản phẩm</h6>
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.GiaSP, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.GiaSP, "", new { @class = "text-danger" })
-        </div>
+<div class="form-group">
+    <br />
+    <h6>Giá bán sản phẩm</h6>
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.GiaSP, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.GiaSP, "", new { @class = "text-danger" })
     </div>
+</div>
 
-    <div class="form-group">
-        <h6>Số lượng sản phẩm</h6>
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.Slgton, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.Slgton, "", new { @class = "text-danger" })
-        </div>
+<div class="form-group">
+    <br />
+    <h6>Số lượng sản phẩm</h6>
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.Slgton, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Slgton, "", new { @class = "text-danger" })
     </div>
-    <div class="form-group">
-        <h6>Hình sản phẩm</h6>
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.HinhSP, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.HinhSP, "", new { @class = "text-danger" })
-        </div>
+</div>
+<div class="form-group">
+    <br />
+    <h6>Hình sản phẩm</h6>
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.HinhSP, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.HinhSP, "", new { @class = "text-danger" })
     </div>
+</div>
     <div class="form-group">
         <div class="col-md-10">
             <input type="file" name="fileUpload" id="fileUpload" accept="image/*"
@@ -83,21 +87,23 @@
         </script>
     }
 
-    <div class="form-group">
-        <h6>Ngày nhập sản phẩm</h6>
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.NgayNhap, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.NgayNhap, "", new { @class = "text-danger" })
-        </div>
+<div class="form-group">
+    <br />
+    <h6>Ngày nhập sản phẩm</h6>
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.NgayNhap, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.NgayNhap, "", new { @class = "text-danger" })
     </div>
+</div>
 
-    <div class="form-group">
-        <h6>Mã danh mục Sản Phẩm</h6>
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.MaDM, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.MaDM, "", new { @class = "text-danger" })
-        </div>
+<div class="form-group">
+    <br />
+    <h6>Mã danh mục Sản Phẩm</h6>
+    <div class="col-md-10">
+        @Html.EditorFor(model => model.MaDM, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.MaDM, "", new { @class = "text-danger" })
     </div>
+</div>
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">

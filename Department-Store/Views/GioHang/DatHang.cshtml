@@ -4,7 +4,6 @@
     ViewBag.Title = "DatHang";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
 <section class="h-100 gradient-custom">
     <div class="container py-5">
         <div class="row d-flex justify-content-center my-4">
@@ -58,8 +57,9 @@
                         }
 
                         <hr class="my-4" />
-                        <span> <strong>Tổng số sản phẩm:</strong> @ViewBag.Tongsoluongsanpham</span>
-                        <span> <strong>Tổng số sản phẩm:</strong> @ViewBag.Tongsoluong</span>
+                        <span> <strong>Tổng số sản phẩm:</strong> @ViewBag.Tongsoluongsanpham &emsp; &emsp;</span>
+                        <span> <strong>Tổng số sản phẩm:</strong> @ViewBag.Tongsoluong  &emsp; &emsp;</span>
+                        <span><strong>Tổng số tiền : @String.Format("{0:0,0}", ViewBag.Tongtien) VND</strong></span>
                     </div>
                 </div>
             </div>
@@ -104,7 +104,7 @@
                                 <tr style="height: 40px">
                                     <td></td>
                                     <td style="font-weight:bold">
-                                        <button type="submit" value="Xác nhận" class="btn btn-outline-success" />
+                                        <button onclick="ThongbaoDatHang()" type="submit" value="" class="btn btn-primary  btn-lg"> Xác nhận</button>
                                     </td>
                                 </tr>
                             }
@@ -114,45 +114,3 @@
         </div>
     </div>
 </section>
-@*@using Department_Store.Models
-<h2 style="text-align:center">Thông tin đặt hàng</h2>
-@{
-    KhachHang kh = (KhachHang)Session["Taikhoan"];
-}
-
-<table align="center">
-    @using (Html.BeginForm())
-    {
-        @Html.ValidationSummary(true)
-        <tr style="height: 40px">
-            <td>Họ tên khách hàng: </td>
-            <td style="font-weight:bold">@kh.hoten</td>
-        </tr>
-        <tr style="height: 40px">
-            <td>Email: </td>
-            <td style="font-weight:bold">@kh.email</td>
-        </tr>
-        <tr style="height: 40px">
-            <td>Địa chỉ: </td>
-            <td style="font-weight:bold">@kh.diachi</td>
-        </tr>
-        <tr style="height: 40px">
-            <td>Điện thoại: </td>
-            <td style="font-weight:bold">@kh.dienthoai</td>
-        </tr>
-        <tr style="height: 40px">
-            <td>Ngày đặt: </td>
-            <td style="font-weight:bold">@DateTime.Now.ToShortDateString()</td>
-        </tr>
-        <tr style="height: 40px">
-            <td>Ngày giao: </td>
-            <td style="font-weight:bold">@DateTime.Now.ToShortDateString()</td>
-        </tr>
-        <tr style="height: 40px">
-            <td></td>
-            <td style="font-weight:bold">
-                <input type="submit" value="Xác nhận" class="btn btn-outline-success" />
-            </td>
-        </tr>
-    }
-</table>*@

@@ -23,5 +23,14 @@ namespace Department_Store.Controllers
             int pageNum = page ?? 1;
             return View(item.ToPagedList(pageNum, pageSize));
         }
+        public ActionResult Search(int? page, string Search)
+        {
+            ViewBag.KeyWord = Search;
+            if (page == null) page = 1;
+            var item = (from hh in data.SanPhams select hh).Where(m => m.Slgton > 0 && m.TenSP.Contains(Search)).OrderBy(m => m.MaSP); ;
+            int pageSize = 8;
+            int pageNum = page ?? 1;
+            return View(item.ToPagedList(pageNum, pageSize));
+        }
     }
 }

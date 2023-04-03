@@ -169,7 +169,7 @@ namespace Department_Store.Controllers
             data.HoaDons.Add(hd);
             data.SaveChanges();
             Session["Giohang"] = null;
-            return RedirectToAction("XacnhanDonhang", "GioHang");
+            return RedirectToAction("Home", "Store");
         }
 
         public ActionResult XacnhanDonhang()

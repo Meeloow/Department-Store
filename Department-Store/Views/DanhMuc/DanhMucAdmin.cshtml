@@ -1,37 +1,33 @@
-﻿@model IEnumerable<Department_Store.Models.SanPham>
+﻿
+@model IEnumerable<Department_Store.Models.DanhMuc>
 @{
-    ViewBag.Title = "DanhMucSP";
+    ViewBag.Title = "DanhMuc";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="row">
+<table class="table">
+    <tr class="text-center">
+        <th>@Html.ActionLink("Sản phẩm", "Index", "Admin", new { area = "" }, new { @class = "nav-link" }) </th>
+        <th>@Html.ActionLink("Danh Mục", "DanhMucAdmin", "DanhMuc", new { area = "" }, new { @class = "nav-link" })</th>
+    </tr>
+</table>
+<h2 class="text-center">Danh Mục <br />@Html.ActionLink("Thêm danh mục", "ThemDM", new { area = "" }, new { @class = "btn btn-primary" })</h2>
+
+
+
+<table class="table">
+    <tr class="text-center">
+        <th> Mã Danh mục </th>
+        <th> Tên Danh mục</th>
+    </tr>
     @foreach (var item in Model)
     {
-        {
-            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                <div class="panel panel-default">
-                    <div class="panel panel-heading">
-                        @item.TenSP
-                    </div>
-                    <div class="panel-body">
-                        <p><strong>Giá: </strong>@item.GiaSP</p>
-                        <p><strong>Ngày cập nhật: </strong>@item.NgayNhap</p>
-                        <p><strong>Số lượng tồn: </strong>@item.Slgton</p>
-                        <p><img src="@item.HinhSP" alt="hinh thumnail" height="300"></p>
-                    </div>
-                    <div class="panel-footer clearfix">
-                        <div class="pull-right">
-                            <a class="btn btn-success" href="@Url.Action("ThemGioHang", "GioHang",new { @id = item.MaSP, @strURL = Request.Url.ToString() })">Đặt mua</a>
-                            @Html.ActionLink("Chi tiết sản phẩm.", "Detail", "Store", new
-                       {
-                           id =
-                           item.MaSP
-                       }, new { @class = "btn btn-default" })
-                        </div>
-                    </div>
-                </div>
-            </div>
-        }
-
+        <tr class="text-center">
+            <td>@Html.DisplayFor(modelItem => item.MaDM)</td>
+            <td>@Html.ActionLink(item.TenDM, "DanhMucSP", new { id = item.MaDM })</td>
+            <td>
+                @Html.ActionLink(" ", "XoaDM", new { id = item.MaDM }, new { @class = "bi bi-trash" })
+            </td>
+        </tr>
     }
-</div>
+</table>
