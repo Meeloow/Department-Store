@@ -5,9 +5,20 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-success ">
+    <div class="container">
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav flex-grow-1">
+                <li>@Html.ActionLink("Sản phẩm", "Index", "Admin", new { area = "" }, new { @class = "nav-link" })</li>
+                <li>@Html.ActionLink("Danh Mục", "DanhMucAdmin", "DanhMuc", new { area = "" }, new { @class = "nav-link" })</li>
+            </ul>
+        </div>
+    </div>
 
-<h2>Sản Phẩm</h2>
-@Html.ActionLink("Thêm sản phẩm", "ThemSP", new { area = "" }, new { @class = "btn btn-outline-primary" })
+</nav>
+
+<h2 class="text-center">Sản Phẩm</h2>
+<p class="text-right">@Html.ActionLink("Thêm sản phẩm", "ThemSP", new { area = "" }, new { @class = "btn btn-primary" })</p>
 <table class="table">
     <tr class="text-center">
         <th> Mã hàng </th>
@@ -16,7 +27,6 @@
         <th> Số lượng tồn</th>
         <th> Hình </th>
         <th> Ngày nhập </th>
-        <th> Danh mục </th>
         <th></th>
     </tr>
     @foreach (var item in Model)
@@ -30,7 +40,7 @@
 
             <td>@Html.DisplayFor(modelItem => item.NgayNhap)</td>
             <td>
-                @Html.ActionLink(" ", "SuaSP", new { id = item.MaSP }, new {@class= "bi bi-pen" }) 
+                @Html.ActionLink(" ", "SuaSP", new { id = item.MaSP }, new { @class = "bi bi-pen" })
                 @Html.ActionLink(" ", "XoaSP", new { id = item.MaSP }, new { @class = "bi bi-trash" })
             </td>
         </tr>

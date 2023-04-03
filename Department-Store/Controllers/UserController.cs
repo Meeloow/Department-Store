@@ -92,7 +92,7 @@ namespace Department_Store.Controllers
             }
             else
             {
-                ViewBag.ThongBao = "Tên đăng nhập hoặc mật khấu không đúng";
+                ViewBag.Fail = "Tên đăng nhập hoặc mật khấu không đúng";
             }
             return RedirectToAction("DangNhap", "User");
         }
