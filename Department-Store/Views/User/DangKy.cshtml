@@ -49,7 +49,7 @@
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                                             <div class=" flex-fill mb-0">
-                                                @Html.EditorFor(model => model.matkhau, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.EditorFor(model => model.matkhau, new { htmlAttributes = new { type = "Password", @class = "form-control" } })
                                                 @Html.ValidationMessageFor(model => model.matkhau, "", new { @class = "text-danger" })
                                                 <label class="form-label" for="form3Example3c">Mật Khẩu</label>
                                             </div>
@@ -97,10 +97,7 @@
 
                                 </div>
                                 <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-
-                                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
-                                         class="img-fluid" alt="Sample image">
-
+                                    <img src="~/Content/images/login.jpg" class="img-fluid" alt="Sample image"/>
                                 </div>
                             </div>
                         </div>

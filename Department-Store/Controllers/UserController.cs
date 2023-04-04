@@ -31,7 +31,7 @@ namespace Department_Store.Controllers
             if (tendangnhap == "Admin@gmail.com")
             {
 
-                ViewBag.alert = "Tên đăng nhập đã tồn tại!";
+                ViewBag.bag = "Tên đăng nhập đã tồn tại!";
                 return RedirectToAction("DangKy", "User");
             }
             else
@@ -61,8 +61,7 @@ namespace Department_Store.Controllers
                     }
                 }
                 return this.DangKy();
-            }
-            
+            }            
         }
         [HttpGet]
         public ActionResult DangNhap()
