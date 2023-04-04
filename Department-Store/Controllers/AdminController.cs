@@ -11,7 +11,7 @@ namespace Department_Store.Controllers
 {
     public class AdminController : Controller
     {
-       DbStore data = new DbStore();
+        DbStore data = new DbStore();
         public ActionResult Index(int? page)
         {
             if (page == null) page = 1;

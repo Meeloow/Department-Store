@@ -31,13 +31,14 @@ namespace Department_Store.Controllers
             {
                 sanpham = new GioHang(id);
                 lstGiohang.Add(sanpham);
-                return Redirect(strURL);
+                //return Redirect(strURL);
             }
             else
             {
                 sanpham.isoluong++;
-                return Redirect(strURL);
+                //return Redirect(strURL);
             }
+            return RedirectToAction("Home", "Store");
         }
         private int TongSoLuong()
         {
@@ -158,7 +159,8 @@ namespace Department_Store.Controllers
             {
                 ChiTietDonHang ctdh = new ChiTietDonHang();
                 ctdh.soluong = item.isoluong;
-                ctdh.madon = dh.madon; ctdh.MaSP = item.masp;
+                ctdh.madon = dh.madon;
+                ctdh.MaSP = item.masp;
                 s = data.SanPhams.Single(n => n.MaSP == item.masp);
                 s.Slgton -= ctdh.soluong;
                 tt += Convert.ToInt32(item.giaban);
