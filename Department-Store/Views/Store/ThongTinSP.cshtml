@@ -1,0 +1,35 @@
+﻿@model Department_Store.Models.SanPham
+
+@{
+    ViewBag.Title = "XoaSP";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table">
+    <tr>
+        <th>Tên sản phẩm</th>
+        <th>Hình sản phẩm</th>
+        <th>Giá sản phẩm</th>
+        <th>Số lượng sản phảm</th>
+        <th>Ngày Nhập sản phẩm</th>
+        <th>Mã Danh mục sản phẩm</th>
+    </tr>
+    <tr>
+        <td>@Html.DisplayFor(model => model.TenSP)</td>
+        <td><img src="@Html.DisplayFor(model => model.HinhSP)" width="180" /></td>
+        <td>@Html.DisplayFor(model => model.GiaSP)</td>
+        <td>@Html.DisplayFor(model => model.Slgton)</td>
+        <td>@Html.DisplayFor(model => model.NgayNhap)</td>
+        <td></td>
+    </tr>
+</table>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+}
+

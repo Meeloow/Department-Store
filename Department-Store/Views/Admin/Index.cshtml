@@ -36,7 +36,9 @@
 
             <td>@Html.DisplayFor(modelItem => item.NgayNhap)</td>
             <td>
-                @Html.ActionLink(" ", "SuaSP", new { id = item.MaSP }, new { @class = "bi bi-pen" })
+                @Html.ActionLink(" ", "SuaSP", new { id = item.MaSP }, new { @class = "bi bi-pen" })|
+                @Html.ActionLink(" ", "ThongTinSP", "Store", new { id = item.MaSP }, new { @class = "bi bi-info-lg" })|
+
                 @Html.ActionLink(" ", "XoaSP", new { id = item.MaSP }, new { @class = "bi bi-trash" })
             </td>
         </tr>

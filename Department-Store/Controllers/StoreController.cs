@@ -1,8 +1,10 @@
-﻿using Department_Store.Models;
+﻿
+using Department_Store.Models;
 using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Drawing.Printing;
+using System.Web.UI;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Web;
@@ -30,6 +32,11 @@ namespace Department_Store.Controllers
             int pageSize = 8;
             int pageNum = page ?? 1;
             return View(item.ToPagedList(pageNum, pageSize));
+        }
+        public ActionResult ThongTinSP(int? id)
+        {
+            var item = data.SanPhams.Where(m => m.MaSP == id).First();
+            return View(item);
         }
     }
 }
