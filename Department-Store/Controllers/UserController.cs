@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity.Migrations;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
 
@@ -20,6 +21,7 @@ namespace Department_Store.Controllers
         [HttpPost]
         public ActionResult DangKy(FormCollection collection, KhachHang kh)
         {
+            var regexPassword = new Regex("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$");
             var hoten = collection["hoten"];
             var tendangnhap = collection["tendangnhap"];
             var matkhau = collection["matkhau"];
@@ -30,35 +32,41 @@ namespace Department_Store.Controllers
             var ngaysinh = string.Format("{0:MM/dd/yyyy}", collection["ngaysinh"]);
             if (tendangnhap == "Admin@gmail.com")
             {
-
-                ViewBag.bag = "Tên đăng nhập đã tồn tại!";
+                ViewData["Admin"] = "Không thể tạo tài khoản admin!";
                 return RedirectToAction("DangKy", "User");
             }
             else
             {
-                if (String.IsNullOrEmpty(MatKhauXacNhan))
+                if (!regexPassword.IsMatch(matkhau))
                 {
-                    ViewData["NhapMKXN"] = "Phải nhập mật khẩu xác nhận!";
+                    ViewData["matkhau"] = "Mật khẩu không hợp lệ!";
                 }
-                else
-                {
-                    if (!matkhau.Equals(MatKhauXacNhan))
+                else {
+                    if (String.IsNullOrEmpty(MatKhauXacNhan))
                     {
-                        ViewData["MatKhauGiongNhau"] = "Mật khẩu và mật khầu xác nhận phài giống nhau";
+                        ViewData["NhapMKXN"] = "Phải nhập mật khẩu xác nhận!";
                     }
                     else
                     {
-                        kh.hoten = hoten;
-                        kh.tendangnhap = tendangnhap;
-                        kh.matkhau = matkhau;
-                        kh.email = email;
-                        kh.diachi = diachi;
-                        kh.dienthoai = dienthoai;
-                        kh.ngaysinh = DateTime.Parse(ngaysinh);
-                        data.KhachHangs.Add(kh);
-                        data.SaveChanges();
-                        return RedirectToAction("DangNhap");
+                        if (!matkhau.Equals(MatKhauXacNhan))
+                        {
+                            ViewData["MatKhauGiongNhau"] = "Mật khẩu và mật khầu xác nhận phài giống nhau";
+                        }
+                        else
+                        {
+                            kh.hoten = hoten;
+                            kh.tendangnhap = tendangnhap;
+                            kh.matkhau = matkhau;
+                            kh.email = email;
+                            kh.diachi = diachi;
+                            kh.dienthoai = dienthoai;
+                            kh.ngaysinh = DateTime.Parse(ngaysinh);
+                            data.KhachHangs.Add(kh);
+                            data.SaveChanges();
+                            return RedirectToAction("DangNhap");
+                        }
                     }
+                    
                 }
                 return this.DangKy();
             }            
@@ -79,11 +87,12 @@ namespace Department_Store.Controllers
                 if (tendangnhap == "Admin@gmail.com")
                 {
                     Session["TaiKhoan"] = kh;
+                    ViewData["Admin"] = "Không thể tạo tài khoản admin!";
                     return RedirectToAction("Index", "Admin");
                 }
                 else
                 {
-                    ViewBag.ThongBao = "Chúc mừng đang nhập thành công";
+                    ViewData["login"]  = "Chúc mừng đang nhập thành công";
                     Session["TaiKhoan"] = kh;
                     return RedirectToAction("Home", "Store");
                 }
