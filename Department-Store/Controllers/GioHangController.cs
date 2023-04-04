@@ -31,12 +31,10 @@ namespace Department_Store.Controllers
             {
                 sanpham = new GioHang(id);
                 lstGiohang.Add(sanpham);
-                //return Redirect(strURL);
             }
             else
             {
                 sanpham.isoluong++;
-                //return Redirect(strURL);
             }
             return RedirectToAction("Home", "Store");
         }
