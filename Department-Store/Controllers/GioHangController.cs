@@ -142,12 +142,9 @@ namespace Department_Store.Controllers
             SanPham s = new SanPham();
             HoaDon hd = new HoaDon();
             List<GioHang> gh = Laygiohang();
-            var ngaygiao = String.Format("{0: d/M/yyyy}", collection["ngaygiao"]);
             dh.makh = kh.makh;
             dh.ngaydat = DateTime.Now;
-            dh.ngaygiao = DateTime.Now;
-
-            //dh.ngaygiao = DateTime.Parse(ngaygiao);
+            dh.ngaygiao = DateTime.Now.AddDays(3);
             data.DonHangs.Add(dh);
             data.SaveChanges();
             hd.NgayLapHD = DateTime.Now;
@@ -159,6 +156,7 @@ namespace Department_Store.Controllers
                 ctdh.soluong = item.isoluong;
                 ctdh.madon = dh.madon;
                 ctdh.MaSP = item.masp;
+                ctdh.gia = (int?)item.giaban;
                 s = data.SanPhams.Single(n => n.MaSP == item.masp);
                 s.Slgton -= ctdh.soluong;
                 tt += Convert.ToInt32(item.giaban);

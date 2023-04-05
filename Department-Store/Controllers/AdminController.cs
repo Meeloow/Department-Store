@@ -107,7 +107,26 @@ namespace Department_Store.Controllers
             return RedirectToAction("Index");
 
         }
-
+        private double TongDoanhThu()
+        {
+            double dt = 0;
+            List<HoaDon> tdt = Session["HoaDon"] as List<HoaDon>;
+            if (tdt != null)
+            {
+                dt = Convert.ToDouble(tdt.Sum(n => n.ThanhTien));
+            }
+            return dt;
+        }
+        public ActionResult DoanhThu(FormCollection collection)
+        {
+            int dt = 0;
+            List<HoaDon> hd = new List<HoaDon>();
+            foreach (HoaDon hoaDon in hd)
+            {
+                dt += Convert.ToInt32(hoaDon.ThanhTien);
+            }
+            return PartialView(dt);
+        }
     }
 
 }

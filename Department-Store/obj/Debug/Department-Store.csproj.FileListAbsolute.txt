@@ -19,10 +19,7 @@ D:\Study\Đồ án\LTW\Department-Store\Department-Store\bin\roslyn\Microsoft.Di
 D:\Study\Đồ án\LTW\Department-Store\Department-Store\bin\roslyn\Microsoft.Managed.Core.targets
 D:\Study\Đồ án\LTW\Department-Store\Department-Store\bin\roslyn\Microsoft.VisualBasic.Core.targets
 D:\Study\Đồ án\LTW\Department-Store\Department-Store\bin\roslyn\System.Collections.Immutable.dll
-D:\Study\Đồ án\LTW\Department-Store\Department-Store\bin\roslyn\System.IO.FileSystem.dll
-D:\Study\Đồ án\LTW\Department-Store\Department-Store\bin\roslyn\System.IO.FileSystem.Primitives.dll
 D:\Study\Đồ án\LTW\Department-Store\Department-Store\bin\roslyn\System.Reflection.Metadata.dll
-D:\Study\Đồ án\LTW\Department-Store\Department-Store\bin\roslyn\System.Security.Cryptography.Primitives.dll
 D:\Study\Đồ án\LTW\Department-Store\Department-Store\bin\roslyn\System.Text.Encoding.CodePages.dll
 D:\Study\Đồ án\LTW\Department-Store\Department-Store\bin\roslyn\System.Threading.Tasks.Extensions.dll
 D:\Study\Đồ án\LTW\Department-Store\Department-Store\bin\roslyn\vbc.exe

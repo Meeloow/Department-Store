@@ -11,8 +11,7 @@ namespace Department_Store.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class KhachHang
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -25,7 +24,6 @@ namespace Department_Store.Models
         public string hoten { get; set; }
         public string tendangnhap { get; set; }
         public string matkhau { get; set; }
-        [EmailAddress]
         public string email { get; set; }
         public string diachi { get; set; }
         public string dienthoai { get; set; }

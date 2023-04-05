@@ -1,0 +1,24 @@
+﻿@model Department_Store.Models.ChiTietDonHang
+
+@{
+    ViewBag.Title = "XemChiTietDonHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>XemChiTietDonHang</h2>
+<table class="table">
+    <tr class="text-center">
+        <th> Mã Đơn Hàng</th>
+        <th> Mã Sản Phẩm</th>
+        <th> Số lượng</th>
+        <th> Tổng tiền đơn</th>
+
+    </tr>
+    <tr class="text-center">
+        <td>@Html.DisplayFor(model => model.DonHang.madon)</td>
+        <td>@Html.DisplayFor(model => model.MaSP)</td>
+        <td>@Html.DisplayFor(model => model.soluong)</td>
+        <td>@Html.DisplayFor(model => model.gia) VND</td>
+    </tr>
+</table>
+ @*@Html.ActionLink("Huỷ", "HuyDonHang", "DonHang", new { area = "" }, new { @class = "btn btn-danger" })*@

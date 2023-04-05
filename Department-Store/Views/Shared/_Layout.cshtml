@@ -39,13 +39,15 @@
                             <input type="submit" class="btn btn-outline-light" value="Search" style="margin-left:10px;">
                         </li>
                     }
-                    </ul>
+                </ul>
 
                 <ul class="navbar-nav">
 
+
                     <li>@Html.ActionLink(" ", "GioHang", "GioHang", new { area = "" }, new { @class = "bi bi-basket nav-link" })</li>
                     <li id="GioHangPartial"> </li>
-                </ul>
+
+                </ul>   
                 <div class="navbar-right">
                     @if ((KhachHang)Session["TaiKhoan"] == null)
                     {
@@ -59,7 +61,7 @@
                     {
                         KhachHang kh = (KhachHang)Session["TaiKhoan"];
                         <ul class="nav navbar-nav">
-                            <li>@Html.ActionLink("Hello " + kh.tendangnhap + "!", "Home", "Store", new { area = "" }, new { @class = "nav-link" })</li>
+                            <li>@Html.ActionLink("Hello " + kh.tendangnhap + "!", "Home", "Store", new {id = kh.makh }, new { @class = "nav-link" })</li>
                             <li>@Html.ActionLink("LogOff", "LogOff", "User", new { area = "" }, new { @class = "nav-link" })</li>
                         </ul>
 

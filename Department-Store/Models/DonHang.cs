@@ -21,7 +21,6 @@ namespace Department_Store.Models
         }
     
         public int madon { get; set; }
-        public Nullable<bool> giaohang { get; set; }
         public Nullable<System.DateTime> ngaydat { get; set; }
         public Nullable<System.DateTime> ngaygiao { get; set; }
         public Nullable<int> makh { get; set; }

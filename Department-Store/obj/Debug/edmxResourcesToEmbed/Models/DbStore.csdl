@@ -24,7 +24,6 @@
       <PropertyRef Name="madon" />
     </Key>
     <Property Name="madon" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="giaohang" Type="Boolean" />
     <Property Name="ngaydat" Type="DateTime" Precision="0" />
     <Property Name="ngaygiao" Type="DateTime" Precision="0" />
     <Property Name="makh" Type="Int32" />

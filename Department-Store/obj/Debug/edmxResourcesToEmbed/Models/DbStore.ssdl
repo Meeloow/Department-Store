@@ -22,7 +22,6 @@
       <PropertyRef Name="madon" />
     </Key>
     <Property Name="madon" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="giaohang" Type="bit" />
     <Property Name="ngaydat" Type="date" />
     <Property Name="ngaygiao" Type="date" />
     <Property Name="makh" Type="int" />
