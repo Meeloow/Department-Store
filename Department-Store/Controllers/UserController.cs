@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Services.Description;
 
 namespace Department_Store.Controllers
 {
@@ -86,8 +87,7 @@ namespace Department_Store.Controllers
             {
                 if (tendangnhap == "Admin@gmail.com")
                 {
-                    Session["TaiKhoan"] = kh;
-                    ViewData["Admin"] = "Không thể tạo tài khoản admin!";
+                    Session["TaiKhoan"] = kh;                  
                     return RedirectToAction("Index", "Admin");
                 }
                 else
@@ -100,9 +100,10 @@ namespace Department_Store.Controllers
             }
             else
             {
-                ViewBag.Fail = "Tên đăng nhập hoặc mật khấu không đúng";
+                ViewData["login"] = "Tên Đăng Nhập hoặc mật khẩu sai!";
+                return RedirectToAction("DangNhap", "User");
             }
-            return RedirectToAction("DangNhap", "User");
+            
         }
         public ActionResult LogOff()
         {

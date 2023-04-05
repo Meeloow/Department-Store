@@ -23,7 +23,6 @@
       <EntityTypeMapping TypeName="DepartmentStoreModel.DonHang">
         <MappingFragment StoreEntitySet="DonHang">
           <ScalarProperty Name="madon" ColumnName="madon" />
-          <ScalarProperty Name="giaohang" ColumnName="giaohang" />
           <ScalarProperty Name="ngaydat" ColumnName="ngaydat" />
           <ScalarProperty Name="ngaygiao" ColumnName="ngaygiao" />
           <ScalarProperty Name="makh" ColumnName="makh" />

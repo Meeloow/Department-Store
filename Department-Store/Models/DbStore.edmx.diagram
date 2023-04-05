@@ -4,10 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="13b88f3a64c84adb9c7318c7de1556c0" Name="Diagram1">
+      <Diagram DiagramId="e38006fb0129452f8af548d80189ee3f" Name="Diagram1">
         <EntityTypeShape EntityType="DepartmentStoreModel.ChiTietDonHang" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="DepartmentStoreModel.DanhMuc" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DepartmentStoreModel.DonHang" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DepartmentStoreModel.DonHang" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="DepartmentStoreModel.HoaDon" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DepartmentStoreModel.KhachHang" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="DepartmentStoreModel.SanPham" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />

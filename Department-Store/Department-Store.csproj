@@ -291,6 +291,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\DanhMucController.cs" />
+    <Compile Include="Controllers\DonHangController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
@@ -2540,13 +2541,6 @@
       <DependentUpon>DbStore.edmx</DependentUpon>
       <LastGenOutput>DbStore.cs</LastGenOutput>
     </Content>
-    <EntityDeploy Include="Models\DbStore.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DbStore.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\DbStore.edmx.diagram">
-      <DependentUpon>DbStore.edmx</DependentUpon>
-    </Content>
     <Content Include="Scripts\App\JavaScript.js" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -2828,6 +2822,13 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
+    <EntityDeploy Include="Models\DbStore.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DbStore.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DbStore.edmx.diagram">
+      <DependentUpon>DbStore.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.6.4.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.4.js" />
     <Content Include="Scripts\jquery-3.6.4.min.js" />
@@ -2948,6 +2949,8 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Store\ThongTinSP.cshtml" />
+    <Content Include="Views\DonHang\XemDonHang.cshtml" />
+    <Content Include="Views\DonHang\XemChiTietDonHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

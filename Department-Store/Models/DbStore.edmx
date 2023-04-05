@@ -27,7 +27,6 @@
             <PropertyRef Name="madon" />
           </Key>
           <Property Name="madon" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="giaohang" Type="bit" />
           <Property Name="ngaydat" Type="date" />
           <Property Name="ngaygiao" Type="date" />
           <Property Name="makh" Type="int" />
@@ -151,7 +150,6 @@
             <PropertyRef Name="madon" />
           </Key>
           <Property Name="madon" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="giaohang" Type="Boolean" />
           <Property Name="ngaydat" Type="DateTime" Precision="0" />
           <Property Name="ngaygiao" Type="DateTime" Precision="0" />
           <Property Name="makh" Type="Int32" />
@@ -278,7 +276,6 @@
             <EntityTypeMapping TypeName="DepartmentStoreModel.DonHang">
               <MappingFragment StoreEntitySet="DonHang">
                 <ScalarProperty Name="madon" ColumnName="madon" />
-                <ScalarProperty Name="giaohang" ColumnName="giaohang" />
                 <ScalarProperty Name="ngaydat" ColumnName="ngaydat" />
                 <ScalarProperty Name="ngaygiao" ColumnName="ngaygiao" />
                 <ScalarProperty Name="makh" ColumnName="makh" />
