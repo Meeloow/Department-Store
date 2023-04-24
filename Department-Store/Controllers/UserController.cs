@@ -33,7 +33,7 @@ namespace Department_Store.Controllers
             var ngaysinh = string.Format("{0:MM/dd/yyyy}", collection["ngaysinh"]);
             if (tendangnhap == "Admin@gmail.com")
             {
-                ViewData["Admin"] = "Không thể tạo tài khoản admin!";
+                //ViewData["Admin"] = "Không thể tạo tài khoản admin!";
                 return RedirectToAction("DangKy", "User");
             }
             else
@@ -92,7 +92,6 @@ namespace Department_Store.Controllers
                 }
                 else
                 {
-                    ViewData["login"]  = "Chúc mừng đang nhập thành công";
                     Session["TaiKhoan"] = kh;
                     return RedirectToAction("Home", "Store");
                 }

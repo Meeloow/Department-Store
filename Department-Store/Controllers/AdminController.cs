@@ -12,15 +12,17 @@ namespace Department_Store.Controllers
     public class AdminController : Controller
     {
         DbStore data = new DbStore();
+
         public ActionResult Index(int? page)
         {
+            
             if (page == null) page = 1;
             var item = (from hh in data.SanPhams select hh).Where(m => m.Slgton > 0).OrderBy(m => m.MaSP); ;
             int pageSize = 10;
             int pageNum = page ?? 1;
             return View(item.ToPagedList(pageNum, pageSize));
         }
-
+        [Authorize]
         public ActionResult ThemSP()
         {
             return View();
